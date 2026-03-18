@@ -1,6 +1,6 @@
 # paulo-curvello.dev
 
-Personal developer portfolio and blog built with Next.js 16. Bilingual (PT/EN), with a blog, projects showcase, and career timeline.
+Personal developer portfolio and blog built with Next.js 16. Bilingual (PT/EN), with a blog, projects showcase, and career timeline. Live at [paulocurvello.com](https://paulocurvello.com).
 
 ## Features
 
