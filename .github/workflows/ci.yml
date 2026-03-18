@@ -52,4 +52,4 @@ jobs:
             cd /var/www/paulo-curvello.dev
             git pull origin main
             docker compose build --no-cache
-            docker compose up -d
+            docker compose up -d --remove-orphans

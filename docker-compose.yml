@@ -5,24 +5,29 @@ services:
     restart: always
     expose:
       - "3000"
-    networks:
-      - web
+    labels:
+      - "traefik.enable=true"
 
-  nginx:
-    image: nginx:alpine
-    container_name: portfolio-nginx
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/ssl:/etc/nginx/ssl:ro
-    depends_on:
-      - app
+      # HTTPS router — apex domain
+      - "traefik.http.routers.portfolio.rule=Host(`paulocurvello.com`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls=true"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
+
+      # HTTPS router — www redirect to apex
+      - "traefik.http.routers.portfolio-www.rule=Host(`www.paulocurvello.com`)"
+      - "traefik.http.routers.portfolio-www.entrypoints=websecure"
+      - "traefik.http.routers.portfolio-www.tls=true"
+      - "traefik.http.routers.portfolio-www.middlewares=www-to-apex"
+
+      # www → apex redirect middleware
+      - "traefik.http.middlewares.www-to-apex.redirectregex.regex=^https://www\\.(.*)"
+      - "traefik.http.middlewares.www-to-apex.redirectregex.replacement=https://$${1}"
+      - "traefik.http.middlewares.www-to-apex.redirectregex.permanent=true"
+
     networks:
-      - web
+      - traefik-public
 
 networks:
-  web:
-    driver: bridge
+  traefik-public:
+    external: true

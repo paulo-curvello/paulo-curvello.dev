@@ -43,5 +43,5 @@ next-env.d.ts
 # project-specific
 CLAUDE.md
 
-# ssl certificates (placed manually on VPS)
+# ssl certificates (placed manually on VPS, never commit)
 nginx/ssl/
