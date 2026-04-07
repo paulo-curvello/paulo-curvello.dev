@@ -22,7 +22,17 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+*.swp
+
+# IDE / Editor
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # debug
 npm-debug.log*
@@ -32,6 +42,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!.env.template
 
 # vercel
 .vercel
@@ -40,8 +52,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# project-specific
-CLAUDE.md
-
-# ssl certificates (placed manually on VPS, never commit)
-nginx/ssl/
+# linters
+.eslintcache

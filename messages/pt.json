@@ -2,56 +2,71 @@
   "nav": {
     "home": "Início",
     "blog": "Blog",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "contact": "[ linkedin ]",
+    "skipLink": "Ir para o conteúdo principal"
   },
   "home": {
-    "greeting": "Olá, eu sou",
-    "role": "Engenheiro de Software Sênior",
-    "specialty": "Especialista .NET",
-    "location": "Rio de Janeiro, Brasil",
-    "bio": "Mais de 7 anos construindo aplicações web escaláveis e de alta qualidade. Especializado em .NET e C#, com experiência em React, Next.js, AWS e arquiteturas cloud modernas. Apaixonado por código limpo e soluções elegantes.",
-    "cta_blog": "Ver blog",
-    "cta_projects": "Ver projetos",
-    "stack_title": "Stack Tecnológico",
-    "experience_title": "Trajetória",
-    "exp1_level": "Desenvolvedor Júnior",
-    "exp1_company": "Morning Star Consulting",
-    "exp1_period": "Nov 2018",
-    "exp1_desc": "Onde tudo começou. Entrei na Morning Star e mergulhei no desenvolvimento .NET — corrigindo bugs, aprendendo a base de código e construindo uma fundação sólida em engenharia backend.",
-    "exp2_level": "Desenvolvedor Pleno",
-    "exp2_company": "Morning Star Consulting",
-    "exp2_period": "Jun 2021",
-    "exp2_desc": "Conquistei a promoção após mais de 2 anos de entregas consistentes. Passei a ser dono de funcionalidades do início ao fim, projetando APIs RESTful e introduzindo Clean Architecture em codebases legados.",
-    "exp3_level": "Fundador",
-    "exp3_company": "Utequi Digital Solutions",
-    "exp3_period": "Jan 2022",
-    "exp3_desc": "Comecei um projeto paralelo — uma agência digital entregando soluções em WordPress e React/.NET. Assumi todos os papéis: desenvolvedor, designer, gerente e vendedor. Entreguei para mais de 150 clientes.",
-    "exp4_level": "Desenvolvedor Sênior",
-    "exp4_company": "Morning Star Consulting",
-    "exp4_period": "Dez 2023",
-    "exp4_desc": "O título pelo qual trabalhei. Hoje projeto sistemas distribuídos na AWS, oriento juniores e conduzo decisões de arquitetura. A mesma curiosidade de sempre, só com mais superfície.",
-    "featured_projects_title": "Projetos em Destaque",
-    "all_projects_cta": "Ver todos os projetos",
-    "blog_section_title": "Últimas do Blog",
-    "blog_section_desc": "Artigos sobre engenharia de software, arquitetura e desenvolvimento.",
-    "all_posts_cta": "Ler todos os posts"
+    "eyebrow": "olá, eu sou",
+    "name": "Paulo Curvello",
+    "role": "Engenheiro de Software Sênior · Especialista .NET",
+    "rolePrimary": "Engenheiro de Software Sênior",
+    "roleSpecialty": "Especialista .NET",
+    "location": "⊙ Rio de Janeiro, Brasil",
+    "bio": "Mais de <strong>7 anos construindo aplicações web escaláveis</strong> e de alta qualidade. Especializado em <strong>.NET e C#</strong>, com experiência em React, Next.js, AWS e arquiteturas cloud modernas. Apaixonado por código limpo e soluções elegantes.",
+    "githubLink": "GitHub",
+    "linkedinLink": "LinkedIn",
+    "emailLink": "Email",
+    "ctaBlog": "Ver blog",
+    "ctaProjects": "Ver projetos",
+    "stackLabel": "stack tecnológico",
+    "timelineTitle": "Trajetória",
+    "featuredTitle": "Projetos em Destaque",
+    "featuredAll": "Ver todos os projetos →",
+    "blogCtaTitle": "Últimas do Blog",
+    "blogCtaDesc": "Artigos sobre engenharia de software, arquitetura e desenvolvimento.",
+    "blogCtaBtn": "Ler todos os posts →",
+    "featuredBadge": "Destaque",
+    "viewProject": "Ver projeto →"
   },
   "blog": {
+    "sectionLabel": "artigos & notas",
     "title": "Blog",
-    "subtitle": "Artigos sobre desenvolvimento, tecnologia e mais.",
-    "read_more": "Ler mais",
-    "no_posts": "Nenhum post encontrado.",
-    "filter_all": "Todos"
+    "subtitle": "Escrevendo sobre .NET, arquitetura de software, boas práticas e as coisas que aprendo construindo sistemas reais.",
+    "filterAll": "todos",
+    "featuredLabel": "destaque",
+    "readTimeUnit": "min de leitura",
+    "filterAriaLabel": "Filtrar posts por tema",
+    "backToList": "voltar ao blog",
+    "articleInProgress": "artigo em desenvolvimento",
+    "articleInProgressBody": "O artigo completo está sendo escrito. Volte em breve — ou me siga no GitHub para ser notificado quando for publicado."
   },
   "projects": {
+    "sectionLabel": "portfólio",
     "title": "Projetos",
-    "subtitle": "Uma seleção do que construí.",
-    "view_project": "Ver projeto",
-    "featured": "Destaque"
+    "subtitle": "Coisas que construí, estou construindo ou que sobreviveram ao processo de aprender fazendo.",
+    "statusLive": "live",
+    "statusWip": "em desenvolvimento",
+    "statusProd": "produção",
+    "statusUse": "em uso",
+    "termProgress": "// progress",
+    "private": "◈ privado",
+    "viewSite": "ver site",
+    "viewCode": "código",
+    "viewGithub": "github",
+    "marketplace": "marketplace"
   },
-  "common": {
-    "back": "Voltar",
-    "published_on": "Publicado em",
-    "tags": "Tags"
+  "footer": {
+    "role": "// engenheiro de software sênior · rio de janeiro, brasil",
+    "github": "github",
+    "linkedin": "linkedin",
+    "instagram": "@paulocurvellodev",
+    "email": "email"
+  },
+  "theme": {
+    "toggle": "Alternar tema"
+  },
+  "lang": {
+    "toggle": "EN"
   }
 }

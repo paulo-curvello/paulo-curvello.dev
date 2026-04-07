@@ -2,56 +2,71 @@
   "nav": {
     "home": "Home",
     "blog": "Blog",
-    "projects": "Projects"
+    "projects": "Projects",
+    "contact": "[ linkedin ]",
+    "skipLink": "Skip to main content"
   },
   "home": {
-    "greeting": "Hi, I'm",
-    "role": "Senior Software Engineer",
-    "specialty": ".NET Specialist",
-    "location": "Rio de Janeiro, Brazil",
-    "bio": "7+ years building scalable, high-quality web applications. Specialized in .NET and C#, with hands-on experience in React, Next.js, AWS, and modern cloud architectures. Passionate about clean code and elegant solutions.",
-    "cta_blog": "Read my blog",
-    "cta_projects": "See projects",
-    "stack_title": "Tech Stack",
-    "experience_title": "Career Path",
-    "exp1_level": "Junior Developer",
-    "exp1_company": "Morning Star Consulting",
-    "exp1_period": "Nov 2018",
-    "exp1_desc": "Where it all started. Joined Morning Star fresh and dove into .NET development — fixing bugs, learning the codebase, and building a solid foundation in backend engineering.",
-    "exp2_level": "Mid-Level Developer",
-    "exp2_company": "Morning Star Consulting",
-    "exp2_period": "Jun 2021",
-    "exp2_desc": "Earned the promotion after 2+ years of consistent delivery. Started owning features end-to-end, designing RESTful APIs, and introducing Clean Architecture to legacy codebases.",
-    "exp3_level": "Founder",
-    "exp3_company": "Utequi Digital Solutions",
-    "exp3_period": "Jan 2022",
-    "exp3_desc": "Started a side venture — a digital agency delivering WordPress and React/.NET solutions. Wore every hat: developer, designer, account manager, and sales. Shipped for 150+ clients.",
-    "exp4_level": "Senior Developer",
-    "exp4_company": "Morning Star Consulting",
-    "exp4_period": "Dec 2023",
-    "exp4_desc": "The title I worked towards. Now designing distributed systems on AWS, mentoring juniors, and driving architectural decisions. Still the same curiosity, just more surface area.",
-    "featured_projects_title": "Featured Projects",
-    "all_projects_cta": "View all projects",
-    "blog_section_title": "Latest from the Blog",
-    "blog_section_desc": "Thoughts on software engineering, architecture, and development.",
-    "all_posts_cta": "Read all posts"
+    "eyebrow": "hi, I'm",
+    "name": "Paulo Curvello",
+    "role": "Senior Software Engineer · .NET Specialist",
+    "rolePrimary": "Senior Software Engineer",
+    "roleSpecialty": ".NET Specialist",
+    "location": "⊙ Rio de Janeiro, Brazil",
+    "bio": "Over <strong>7 years building scalable, high-quality web applications</strong>. Specialized in <strong>.NET and C#</strong>, with experience in React, Next.js, AWS and modern cloud architectures. Passionate about clean code and elegant solutions.",
+    "githubLink": "GitHub",
+    "linkedinLink": "LinkedIn",
+    "emailLink": "Email",
+    "ctaBlog": "Read blog",
+    "ctaProjects": "View projects",
+    "stackLabel": "tech stack",
+    "timelineTitle": "Career",
+    "featuredTitle": "Featured Projects",
+    "featuredAll": "View all projects →",
+    "blogCtaTitle": "Latest from the Blog",
+    "blogCtaDesc": "Articles on software engineering, architecture and development.",
+    "blogCtaBtn": "Read all posts →",
+    "featuredBadge": "Featured",
+    "viewProject": "View project →"
   },
   "blog": {
+    "sectionLabel": "articles & notes",
     "title": "Blog",
-    "subtitle": "Articles about development, technology, and more.",
-    "read_more": "Read more",
-    "no_posts": "No posts found.",
-    "filter_all": "All"
+    "subtitle": "Writing about .NET, software architecture, best practices and what I learn building real systems.",
+    "filterAll": "all",
+    "featuredLabel": "featured",
+    "readTimeUnit": "min read",
+    "filterAriaLabel": "Filter posts by topic",
+    "backToList": "back to blog",
+    "articleInProgress": "article in progress",
+    "articleInProgressBody": "The full article is being written. Check back soon — or follow me on GitHub to be notified when it's published."
   },
   "projects": {
+    "sectionLabel": "portfolio",
     "title": "Projects",
-    "subtitle": "A selection of things I've built.",
-    "view_project": "View project",
-    "featured": "Featured"
+    "subtitle": "Things I built, am building, or that survived the process of learning by doing.",
+    "statusLive": "live",
+    "statusWip": "in development",
+    "statusProd": "production",
+    "statusUse": "in use",
+    "termProgress": "// progress",
+    "private": "◈ private",
+    "viewSite": "view site",
+    "viewCode": "code",
+    "viewGithub": "github",
+    "marketplace": "marketplace"
   },
-  "common": {
-    "back": "Back",
-    "published_on": "Published on",
-    "tags": "Tags"
+  "footer": {
+    "role": "// senior software engineer · rio de janeiro, brazil",
+    "github": "github",
+    "linkedin": "linkedin",
+    "instagram": "@paulocurvellodev",
+    "email": "email"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "lang": {
+    "toggle": "PT"
   }
 }
