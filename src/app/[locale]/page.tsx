@@ -15,7 +15,7 @@ const meta = {
   },
 };
 
-export async function generateMetadata({ params }: PageProps<"/[locale]">): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const m = meta[locale as "pt" | "en"] ?? meta.pt;
   const url = `https://paulocurvello.com/${locale}`;
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]">): Prom
   };
 }
 
-export default async function HomePage({ params }: PageProps<"/[locale]">) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   return <HomePageClient />;

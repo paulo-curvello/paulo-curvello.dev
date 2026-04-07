@@ -14,7 +14,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageProps<"/[locale]/blog/[slug]">): Promise<Metadata> {
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
@@ -46,7 +48,9 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({
   params,
-}: PageProps<"/[locale]/blog/[slug]">) {
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
