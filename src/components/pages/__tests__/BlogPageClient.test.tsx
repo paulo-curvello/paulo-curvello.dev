@@ -6,6 +6,17 @@ const mockReplace = vi.fn();
 let mockSearchParams = new URLSearchParams();
 let mockLocale = "pt";
 
+vi.mock("@/lib/data/blog", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/data/blog")>();
+  return {
+    ...actual,
+    blogPosts: [
+      { id: "featured-1", tag: "pessoal", featured: true, titlePt: "Featured PT", titleEn: "Featured EN" },
+      { id: "normal-1", tag: "pessoal", featured: false, titlePt: "Normal PT", titleEn: "Normal EN" },
+    ],
+  };
+});
+
 vi.mock("next/navigation", () => ({
   usePathname: () => "/pt/blog",
   useRouter: () => ({ replace: mockReplace }),
@@ -75,5 +86,11 @@ describe("BlogPageClient Filter", () => {
     
     // URL canonical filter uses PT values internally ('pessoal'), though UI shows EN
     expect(mockReplace).toHaveBeenCalledWith("/pt/blog?filter=pessoal", { scroll: false });
+  });
+
+  it("handles invalid filter falling back to 'todos'", () => {
+    mockSearchParams = new URLSearchParams("?filter=invalidFilter123");
+    render(<BlogPageClient />);
+    expect(screen.getByText("Featured PT")).toBeInTheDocument();
   });
 });

@@ -2,9 +2,11 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { ProjectCard } from "../ProjectCard";
 import type { Project } from "@/lib/data/projects";
 
+let mockLocale = "pt";
+
 vi.mock("next-intl", () => ({
   useTranslations: () => (key: string) => key,
-  useLocale: () => "pt",
+  useLocale: () => mockLocale,
 }));
 
 const mockProject: Project = {
@@ -31,6 +33,31 @@ const statusLabels = {
 };
 
 describe("ProjectCard", () => {
+  beforeEach(() => {
+    mockLocale = "pt";
+  });
+
+  it("renders english content when locale is en", () => {
+    mockLocale = "en";
+    render(<ProjectCard project={mockProject} statusLabels={statusLabels} />);
+    expect(screen.getByText("My Project")).toBeInTheDocument();
+    expect(screen.getByText("Project description")).toBeInTheDocument();
+    expect(screen.getByText("// my project")).toBeInTheDocument();
+  });
+
+  it("renders english terminal items when locale is en", () => {
+    mockLocale = "en";
+    const withTerminal: Project = {
+      ...mockProject,
+      wide: true,
+      terminal: [
+        { done: true, labelPt: "auth pt", labelEn: "auth en" },
+      ],
+    };
+    render(<ProjectCard project={withTerminal} statusLabels={statusLabels} termProgressLabel="progress" />);
+    expect(screen.getByText("auth en")).toBeInTheDocument();
+  });
+
   it("renders project name in the active locale", () => {
     render(<ProjectCard project={mockProject} statusLabels={statusLabels} />);
     expect(screen.getByText("Meu Projeto")).toBeInTheDocument();

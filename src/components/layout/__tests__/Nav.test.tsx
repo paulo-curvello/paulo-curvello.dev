@@ -1,8 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Nav } from "../Nav";
 
+let mockPathname = "/pt";
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/pt",
+  usePathname: () => mockPathname,
   useRouter: () => ({ push: vi.fn() }),
 }));
 
@@ -27,6 +28,7 @@ const navProps = {
 };
 
 beforeEach(() => {
+  mockPathname = "/pt";
   mockTheme = "dark";
   mockSetTheme.mockClear();
 });
@@ -81,6 +83,25 @@ describe("Nav", () => {
     expect(langLinks.length).toBeGreaterThan(0);
     const link = langLinks[0].closest("a");
     expect(link).toHaveAttribute("href", "/en");
+  });
+
+  it("computes other locale correctly for en", () => {
+    mockPathname = "/en";
+    render(<Nav {...navProps} locale="en" langToggle="PT" />);
+    const ptLinks = screen.getAllByText("PT");
+    expect(ptLinks.length).toBeGreaterThan(0);
+    const link = ptLinks[0].closest("a");
+    expect(link).toHaveAttribute("href", "/pt");
+  });
+
+  it("handles empty segment isActive logic with trailing slash", () => {
+    mockPathname = "/pt/";
+    render(<Nav {...navProps} />);
+  });
+
+  it("handles segment isActive logic for blog", () => {
+    mockPathname = "/pt/blog";
+    render(<Nav {...navProps} />);
   });
 
   it("contact CTA link is present", () => {

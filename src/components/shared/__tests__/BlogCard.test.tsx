@@ -2,9 +2,11 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { BlogCard } from "../BlogCard";
 import type { BlogPost } from "@/lib/data/blog";
 
+let mockLocale = "pt";
+
 vi.mock("next-intl", () => ({
   useTranslations: () => (key: string) => key,
-  useLocale: () => "pt",
+  useLocale: () => mockLocale,
 }));
 
 vi.mock("next/link", () => ({
@@ -29,6 +31,17 @@ const mockPost: BlogPost = {
 };
 
 describe("BlogCard", () => {
+  beforeEach(() => {
+    mockLocale = "pt";
+  });
+
+  it("renders english content when locale is en", () => {
+    mockLocale = "en";
+    render(<BlogCard post={mockPost} />);
+    expect(screen.getByText("Title in English")).toBeInTheDocument();
+    expect(screen.getByText("Description in English")).toBeInTheDocument();
+  });
+
   it("renders title in the active locale", () => {
     render(<BlogCard post={mockPost} />);
     expect(screen.getByText("Título em Português")).toBeInTheDocument();
