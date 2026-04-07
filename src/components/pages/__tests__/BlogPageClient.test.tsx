@@ -19,7 +19,7 @@ vi.mock("next-intl", () => ({
 
 // Mock the BlogCard to make testing easier without rendering full post details
 vi.mock("@/components/shared/BlogCard", () => ({
-  BlogCard: ({ post }: { post: any }) => <div data-testid={`post-${post.id}`}>{post.titlePt}</div>,
+  BlogCard: ({ post }: { post: { id: string | number; titlePt: string } }) => <div data-testid={`post-${post.id}`}>{post.titlePt}</div>,
 }));
 
 describe("BlogPageClient Filter", () => {
